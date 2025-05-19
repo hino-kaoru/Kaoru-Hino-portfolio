@@ -194,21 +194,19 @@ header {
 }
 
 /* works内のPCのマウスホバー時　ここから↓ */
-.works_detail_image-container {
+.works_detail_image-container>a {
+  display: block;
   position: relative;
   /*親要素にrelative*/
 }
 
 .caption {
   margin: 0;
-  font-size: 20px;
+  font-size: 40px;
   color: white;
-  position: absolute;
 
-  /*中央寄せの「おまじない」*/
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+
 }
 
 .mask {
@@ -219,14 +217,17 @@ header {
   left: 0;
   opacity: 0;
   /* マスクを表示しない */
-  background-color: rgba(117, 85, 63, 0.6);
+  background-color: rgba(117, 85, 63, 0.7);
   /* マスクは半透明 */
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
-.works_detail_image-container:hover .mask {
+.works_detail_image-container>a:hover .mask {
   opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* マスクを表示する */
 }
 
@@ -239,7 +240,6 @@ header {
   margin-left: 70%;
   margin-bottom: 80px;
 
-  overflow: hidden;
   cursor: pointer;
 
 }
@@ -291,6 +291,19 @@ header {
   margin-top: 55%;
   margin-left: 55%;
 }
+
+.view_more-button {
+  width: 170px;
+  transition: all 0.3s;
+}
+
+.view_more_about:hover .view_more-button {
+  transform: scale(1.2);
+}
+
+
+
+
 
 /* contact */
 .contact_wrap {
@@ -445,6 +458,15 @@ dd {
 .works_pop-burger_pc {
   width: 40%;
 }
+
+/* works designcafeのモーダル */
+
+.modal_content {
+  display: flex;
+  justify-content: space-between;
+
+}
+
 
 /* aboutのページ */
 
@@ -731,20 +753,32 @@ input[type="email"] {
 
 }
 
-.button-area-thanks {
-  text-align: center;
-  margin-bottom: 80px;
-
-}
 
 .thanks_button {
-  width: 420px;
   margin: 0 auto;
-  background: url(../images/thanks_button_pc@2x-8.png);
+  margin-bottom: 100px;
 }
 
-.thanks_button:hover {
-  background: url(../images/thanks_button_pc02@2x-50.png);
+
+
+
+.thanks-btn {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 60px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #725039;
+  background-color: #f4ede1;
+  border-radius: 10px;
+}
+
+.thanks-btn:hover {
+  background-color: #75553f;
+  color: #f4ede1;
 }
 
 
@@ -784,6 +818,7 @@ input[type="email"] {
     height: 33px;
 
     cursor: pointer;
+    z-index: 999;
   }
 
   .hamburger span {
@@ -882,6 +917,12 @@ input[type="email"] {
 @media screen and (max-width:767px) {
 
   /* HOMEのページ */
+
+  header {
+    width: 100%;
+  }
+
+
 
   .fv img {
     margin-top: 0;
@@ -992,6 +1033,12 @@ input[type="email"] {
     max-width: 315px;
     margin: 0 auto;
     width: 100%;
+  }
+
+  .about-home_datyou {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
   }
 
   .about_container .name {
