@@ -102,6 +102,7 @@ header {
   left: 0;
   width: 240px;
   height: auto;
+  z-index: 100;
 
 }
 
@@ -204,9 +205,6 @@ header {
   margin: 0;
   font-size: 40px;
   color: white;
-
-
-
 }
 
 .mask {
@@ -224,6 +222,56 @@ header {
 }
 
 .works_detail_image-container>a:hover .mask {
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* マスクを表示する */
+}
+
+/* PC画面にマウスホバー時　ここまで↑ */
+
+
+/* works(LPがある)PC画像のマウスホバー時　ここから↓ */
+
+.works_web_pc {
+  transition: 0.3s;
+}
+
+.works_web_pc:hover {
+  filter: brightness(0.7) blur(1px);
+
+
+}
+
+
+.modal_item {
+  display: block;
+  position: relative;
+  /*親要素にrelative*/
+}
+
+.caption {
+  margin: 0;
+  font-size: 40px;
+  color: white;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  /* マスクを表示しない */
+  background-color: rgba(117, 85, 63, 0.7);
+  /* マスクは半透明 */
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.modal_item:hover .mask {
   opacity: 1;
   display: flex;
   align-items: center;
@@ -307,8 +355,8 @@ header {
 
 /* contact */
 .contact_wrap {
-  margin-top: 300px;
-  margin-bottom: 80px;
+  margin-top: 200px;
+
   padding-right: 30px;
 }
 
@@ -455,17 +503,115 @@ dd {
 
 }
 
+/* WORKS　モーダルがある制作物 */
+.works_web_pc {
+  width: 55%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
 .works_pop-burger_pc {
   width: 40%;
 }
 
 /* works designcafeのモーダル */
 
-.modal_content {
-  display: flex;
-  justify-content: space-between;
+.modal_item-area {
+  display: none;
+  height: 100vh;
+  width: 80%;
+  background: rgba(255, 255, 255, 1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  overflow: scroll;
+
+  transform: translate(-50%, -50%);
+
+  margin: 100px;
+
 
 }
+
+
+.modal_item-area-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  /* 左右に余白入れる */
+  padding: 50px;
+  margin: 80px;
+
+}
+
+/*モーダル　オーバーレイ  */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(117, 85, 63, 0.7);
+  width: 100%;
+  height: 100%;
+
+}
+
+/* モーダル×印　↓ */
+span.batsu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.batsu {
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.batsu::before,
+.batsu::after {
+  /* 共通設定 */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  /* 棒の幅（太さ） */
+  height: 30px;
+  /* 棒の高さ */
+  background: #bc8b69;
+  border-radius: 2px;
+}
+
+.batsu::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.batsu::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* 表示領域外へはスクロールさせない */
+.no_scroll {
+  overflow: hidden;
+}
+
+
+.lp_pc {
+  width: 60%;
+  border: 2px solid #e09868;
+}
+
+.lp_sp {
+  width: 30%;
+  border: 2px solid #e09868;
+}
+
+
+/* モーダル×　ここまで↑ */
+
 
 
 /* aboutのページ */
@@ -680,6 +826,7 @@ input[type="email"] {
   /* テキストに下線をつけない */
   font-size: 16px;
   /* テキストのフォントサイズ */
+  transition: 0.4s;
   cursor: pointer;
   /* マウスポインタを変更する */
 
@@ -688,6 +835,7 @@ input[type="email"] {
 .button_sbbmit:hover {
   background-color: #e3dad6;
   color: #bc8b69;
+
 }
 
 
@@ -757,16 +905,18 @@ input[type="email"] {
 .thanks_button {
   margin: 0 auto;
   margin-bottom: 100px;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
 
 
 .thanks-btn {
-  display: block;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  line-height: 60px;
   width: 400px;
   height: 60px;
   font-size: 16px;
@@ -813,7 +963,7 @@ input[type="email"] {
     display: block;
     position: absolute;
 
-    top: 10px;
+    top: 30px;
     right: 20px;
     height: 33px;
 
@@ -825,7 +975,7 @@ input[type="email"] {
     display: block;
     width: 33px;
     height: 2px;
-    background: #eeddbb;
+    background: #75553f;
     position: relative;
     top: 10px;
 
@@ -837,7 +987,7 @@ input[type="email"] {
     display: block;
     width: 33px;
     height: 2px;
-    background: #eeddbb;
+    background: #75553f;
     position: absolute;
   }
 
@@ -1286,10 +1436,6 @@ input[type="email"] {
     margin: 120px auto 0;
     text-align: center;
 
-    width: 50%;
-    max-width: 500px;
-    min-width: 200px;
-
     border: none;
     /* 枠線をなくす */
     border-radius: 10px;
@@ -1311,6 +1457,11 @@ input[type="email"] {
     cursor: pointer;
     /* マウスポインタを変更する */
   }
+
+  .thanks-btn {
+    width: 200px;
+  }
+
 
   .logo_thanks {
     width: 50px;

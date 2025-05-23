@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>hinonodesign</title>
   <meta name="description" content="ポートフォリオサイト　hinonodesignです。">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   <script>
     (function (d) {
@@ -17,7 +18,6 @@
         h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
     })(document);
   </script>
-
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -40,10 +40,7 @@
   <!-- contents 全体 -->
   <div class="content_wrap">
 
-
-
     <div class="contents">
-
 
       <!-- works -->
       <section class="works">
@@ -51,12 +48,29 @@
         <div class="works_detail_wrap">
 
           <div class="modal_content">
+
             <div class="modal_item">
-              <a href="images/Designcafe-lp-pc.jpg"><a href="images/Designcafe-lp-sp.jpg"><img
-                    src="images/works_detail_cafe_pc@2x-8.png" alt="DesignCafeのWEBサイト" class="works_banner_pc"></a></a>
+              <img src="images/works_detail_cafe_pc@2x-8.png" alt="DesignCafeのWEBサイト" class="works_web_pc">
+              <div class="mask">
+                <p class="caption">view more</p>
+              </div>
+            </div>
+
+            <!-- オーバーレイ -->
+            <div id="overlay" class="overlay">
+
+              <div class="modal_item-area">
+                <!--×マーク　↓  -->
+                <span class="batsu"></span>
+
+                <div class="modal_item-area-inner">
+
+                  <img src="images/Designcafe-lp-pc.jpg" alt="デザインカフェのPC版LP" class="lp_pc">
+                  <img src="images/Designcafe-lp-sp.jpg" alt="デザインカフェのスマホ版LP" class="lp_sp">
+                </div>
+              </div>
             </div>
           </div>
-
           <p class="works_detail_title">DesignCafeのWEBサイト（架空）</p>
 
           <div class="about_production">
@@ -113,6 +127,50 @@
       <p class="copyright"><small>&copy;2025 hinono design</small></p>
     </div>
   </footer>
+
+  <script>
+    $('.modal_item').click(function () {
+      $("body").addClass("no_scroll"); // 背景固定させるクラス付与
+      $('.modal_item-area, .overlay').show();
+    });
+
+    // 閉じるボタンにクリックイベントを設定
+    $('.overlay, .batsu').click(function () {
+      // fadeOutメソッドでモーダルを隠す
+      $('.modal_item-area, .overlay').fadeOut();
+    });
+
+    $('.modal_item').click(function () {
+      $("body").removeClass("no_scroll"); // 背景固定させるクラス削除
+      $('.back_to_top, .back_to_top-ostrich').fadeOut();
+    });
+
+
+    // ページトップへ戻るボタンの動き↓
+    $(function () {
+      // ページトップへ戻るボタンの要素を隠す
+      $('.back_to_top, .back_to_top-ostrich').hide();
+      // スクロールした場合のアクション
+      $(window).scroll(function () {
+        // スクロール位置が200px超えたらボタンをフェードイン
+        if ($(this).scrollTop() > 200) {
+          $('.back_to_top, .back_to_top-ostrich').fadeIn();
+        }
+      });
+
+      // ページトップへ戻るボタンをクリックした時の戻るスピードの速さ
+      $('.back_to_top, .back_to_top-ostrich').click(function () {
+        $('html,body').animate({
+          scrollTop: 0
+        }, 500);
+        return false;
+      });
+    });
+
+  </script>
+
+
+
 </body>
 
 </html>

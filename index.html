@@ -105,7 +105,9 @@
             <div class="works_detail_image-container">
               <a href="works_ice_detail.html"><img src="images/works_home_ice_pc@2x-50.jpg" alt="アイスクリームのバナー">
                 <div class="mask">
+                  <p class="caption">view more</p>
                 </div>
+
               </a>
               <p class="works_title">アイスクリームの広告用バナー</p>
               <p class="works_kinds">banner/design</p>
@@ -113,7 +115,9 @@
 
             <div class="works_detail_image-container">
               <a href="works_burger_detail.html"><img src="images/works_home_burger_pc@2x-50.jpg" alt="高級感あるハンバーガーのバナー">
-                <div class="mask"></div>
+                <div class="mask">
+                  <p class="caption">view more</p>
+                </div>
               </a>
               <p class="works_title">ハンバーガーの広告用バナー</p>
               <p class="works_kinds">banner/design</p>
@@ -122,15 +126,20 @@
             <div class="works_detail_image-container">
               <a href="works_beautysalon_detail.html"><img src="images/works_home_beautysalon_pc@2x-50.jpg"
                   alt="美容室のLP">
-                <div class="mask"></div>
+                <div class="mask">
+                  <p class="caption">view more</p>
+                </div>
               </a>
               <p class="works_title">美容室のLP</p>
               <p class="works_kinds">LP/design</p>
             </div>
+
             <div class="works_detail_image-container">
               <a href="works_detail_co-working detail.html"><img src="images/works_home_coworking_pc@2x-50.jpg"
                   alt="コワーキングスペースLP">
-                <div class="mask"></div>
+                <div class="mask">
+                  <p class="caption">view more</p>
+                </div>
               </a>
               <p class="works_title">コワーキングスペースのLP</p>
               <p class="works_kinds">LP/design</p>
@@ -194,11 +203,8 @@
       </div>
     </footer>
 
-
-
-
-
   </div>
+
   <script>
     $(function () {
       $('.hamburger').on('click', function () {
@@ -207,6 +213,26 @@
       });
     });
 
+    // ページトップへ戻るボタンの動き↓
+    $(function () {
+      // ページトップへ戻るボタンの要素を隠す
+      $('.back_to_top, .back_to_top-ostrich').hide();
+      // スクロールした場合のアクション
+      $(window).scroll(function () {
+        // スクロール位置が200px超えたらボタンをフェードイン
+        if ($(this).scrollTop() > 200) {
+          $('.back_to_top, .back_to_top-ostrich').fadeIn();
+        }
+      });
+
+      // ページトップへ戻るボタンをクリックした時の戻るスピードの速さ
+      $('.back_to_top, .back_to_top-ostrich').click(function () {
+        $('html,body').animate({
+          scrollTop: 0
+        }, 500);
+        return false;
+      });
+    });
 
   </script>
 

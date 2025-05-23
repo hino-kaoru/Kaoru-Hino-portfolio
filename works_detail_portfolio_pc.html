@@ -7,6 +7,8 @@
   <title>hinonodesign</title>
   <meta name="description" content="ポートフォリオサイト　hinonodesignです。">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
   <script>
     (function (d) {
       var config = {
@@ -18,8 +20,8 @@
     })(document);
   </script>
 
-
   <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -40,17 +42,34 @@
   <!-- contents 全体 -->
   <div class="content_wrap">
 
-
-
     <div class="contents">
-
 
       <!-- works -->
       <section class="works">
-        <h2 class="title">works</h2>
+        <h2 class="title" id="title">works</h2>
         <div class="works_detail_wrap">
 
-          <img src="images/works_detail_portfolio_pc@2x-8.png" alt="このポートフォリオサイト" class="works_banner_pc">
+          <div class="modal_content">
+
+            <div class="modal_item">
+              <img src="images/works_detail_portfolio_pc@2x-8.png" alt="このポートフォリオサイト" class="works_web_pc">
+            </div>
+
+            <!-- オーバーレイ -->
+            <div id="overlay" class="overlay">
+              <div class="modal_item-area">
+
+                <!--×マーク　↓  -->
+                <span class="batsu"></span>
+
+                <div class="modal_item-area-inner">
+
+                  <img src="images/portforio_pc.jpg" alt="このポートフォリオサイトです" class="lp_pc">
+                  <img src="images/portforio_sp.jpg" alt="このポートフォリオサイトのスマホ版" class="lp_sp">
+                </div>
+              </div>
+            </div>
+          </div>
 
           <p class="works_detail_title">ポートフォリオサイト（当サイト）</p>
 
@@ -66,7 +85,7 @@
             </dl>
             <div class="line"></div>
             <p class="about_production_text">
-              当サイトです。メインビジュアルにある英文は星の王子様より引用した台詞で、「砂漠が美しいのは、どこかに井戸をかくしているからだよ。」という意味です。何をどうすべきか分からない、考えがまとまらず漠然としたお客様のお困りごとを砂漠の中にいる状態に例え、一緒に旅をしながら泉を見つける（解決する）お手伝いをしたいというイメージで制作しました。YMOのSimoonという曲の世界観を表現しました。
+              当サイトです。メインビジュアルにある英文は小説　「星の王子様」より引用した台詞で、和訳すると「砂漠が美しいのは、どこかに井戸をかくしているからだよ。」です。何をどうすべきか分からない、考えがまとまらず漠然としたお客様のお困りごとを砂漠の中にいる状態に例え、一緒に旅をしながら泉を見つける（解決する）お手伝いをしたいというイメージで制作しました。YMOのSimoonという曲の世界観を表現したデザインにしました。
             </p>
 
             <a href="works.html"><img src="images/works_list_pc@2x-8.png" alt="works一覧へ戻るボタン"
@@ -107,6 +126,29 @@
       <p class="copyright"><small>&copy;2025 hinono design</small></p>
     </div>
   </footer>
+
+  <script>
+    $('.modal_item').click(function () {
+      $("body").addClass("no_scroll"); // 背景固定させるクラス付与
+      $('.modal_item-area, .overlay').show();
+    });
+
+    // 閉じるボタンにクリックイベントを設定
+    $('.overlay, .batsu').click(function () {
+      // fadeOutメソッドでモーダルを隠す
+      $('.modal_item-area, .overlay').fadeOut();
+    });
+
+    $('.modal_item').click(function () {
+      $("body").removeClass("no_scroll"); // 背景固定させるクラス削除
+      $('.back_to_top, .back_to_top-ostrich').fadeOut
+        ();
+    });
+
+
+  </script>
+
+
 </body>
 
 </html>

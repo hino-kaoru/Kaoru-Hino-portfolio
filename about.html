@@ -18,6 +18,7 @@
     })(document);
   </script>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -37,6 +38,20 @@
           <li><a href="contact.html">contact</a></li>
         </ul>
       </nav>
+
+      <!-- スマホ版　ハンバーガーメニュー -->
+      <div class="hamburger"><span></span></div>
+      <nav class="sp_nav">
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="works.html">works</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- ハンバーガーメニューここまで↑ -->
+
     </div>
   </header>
 
@@ -142,6 +157,38 @@
       <p class="copyright"><small>&copy;2025 hinono design</small></p>
     </div>
   </footer>
+
+  <script>
+    $(function () {
+      $('.hamburger').on('click', function () {
+        $('.hamburger').toggleClass('open');
+        $('.sp_nav').fadeToggle();
+      });
+    });
+
+    // ページトップへ戻るボタンの動き↓
+    $(function () {
+      // ページトップへ戻るボタンの要素を隠す
+      $('.back_to_top, .back_to_top-ostrich').hide();
+      // スクロールした場合のアクション
+      $(window).scroll(function () {
+        // スクロール位置が200px超えたらボタンをフェードイン
+        if ($(this).scrollTop() > 200) {
+          $('.back_to_top, .back_to_top-ostrich').fadeIn();
+        }
+      });
+
+      // ページトップへ戻るボタンをクリックした時の戻るスピードの速さ
+      $('.back_to_top, .back_to_top-ostrich').click(function () {
+        $('html,body').animate({
+          scrollTop: 0
+        }, 500);
+        return false;
+      });
+    });
+
+  </script>
+
 </body>
 
 </html>
