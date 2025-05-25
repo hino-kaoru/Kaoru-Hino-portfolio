@@ -45,9 +45,6 @@
 
       <div class="header-wrap">
 
-
-
-
         <h1 class="logo"><a href="index.html"><img src="images/logo_pc.png" alc="logo"></a></h1>
         <nav class="pc_nav">
           <ul>
@@ -206,6 +203,8 @@
   </div>
 
   <script>
+
+    // ハンバーガーボタン
     $(function () {
       $('.hamburger').on('click', function () {
         $('.hamburger').toggleClass('open');
@@ -232,6 +231,21 @@
         }, 500);
         return false;
       });
+    });
+
+
+    // 歩くダチョウ
+    $(window).on('scroll', function () {
+      let scroll_num = Math.floor($(this).scrollTop());
+      let scroll_change_num = String(scroll_num).slice(-2);
+      console.log(scroll_change_num);
+      if (scroll_change_num < 33) {
+        $('.back_to_top-ostrich img').attr('src', 'images/back_to_top-ostrich@2x-8.png');
+      } else if (scroll_change_num < 66) {
+        $('.back_to_top-ostrich img').attr('src', 'images/ostrich02@2x-8.png');
+      } else {
+        $('.back_to_top-ostrich img').attr('src', 'images/ostrich03@2x-8.png');
+      }
     });
 
   </script>

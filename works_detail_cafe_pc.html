@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>hinonodesign</title>
   <meta name="description" content="ポートフォリオサイト　hinonodesignです。">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   <script>
     (function (d) {
@@ -18,6 +17,8 @@
         h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
     })(document);
   </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -34,6 +35,20 @@
           <li><a href="contact.html">contact</a></li>
         </ul>
       </nav>
+
+      <!-- スマホ版　ハンバーガーメニュー -->
+      <div class="hamburger"><span></span></div>
+      <nav class="sp_nav">
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="works.html">works</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- ハンバーガーメニューここまで↑ -->
+
     </div>
   </header>
 
@@ -51,49 +66,51 @@
 
             <div class="modal_item">
               <img src="images/works_detail_cafe_pc@2x-8.png" alt="DesignCafeのWEBサイト" class="works_web_pc">
-              <div class="mask">
-                <p class="caption">view more</p>
-              </div>
+              <div class="mask-mock-up"></div>
+              <div class="mask-mock-up02"></div>
+              <p class="caption02">view all</p>
             </div>
 
-            <!-- オーバーレイ -->
-            <div id="overlay" class="overlay">
-
-              <div class="modal_item-area">
-                <!--×マーク　↓  -->
-                <span class="batsu"></span>
-
-                <div class="modal_item-area-inner">
-
-                  <img src="images/Designcafe-lp-pc.jpg" alt="デザインカフェのPC版LP" class="lp_pc">
-                  <img src="images/Designcafe-lp-sp.jpg" alt="デザインカフェのスマホ版LP" class="lp_sp">
-                </div>
-              </div>
-            </div>
           </div>
-          <p class="works_detail_title">DesignCafeのWEBサイト（架空）</p>
 
-          <div class="about_production">
-            <div class="line"></div>
-            <dl>
-              <dt>概要</dt>
-              <dd>カフェサイトのWEBサイト（架空）</dd>
-              <dt>制作範囲</dt>
-              <dd>コーディング</dd>
-              <dt>使用ツール</dt>
-              <dd>Visual Studio Code/Illustrator</dd>
-            </dl>
-            <div class="line"></div>
-            <p class="about_production_text">スクールの課題として制作しました。<br>
-              Illustratorで制作されたデザインカンプからHTML、CSS、jQueryを使用してコーディングを行いました。
-              デザインカンプを忠実に再現するように微調整を重ね、ヘッダーやギャラリーセクションはjQueryにて動きのあるサイトに仕上げました。
-            </p>
+          <!-- オーバーレイ -->
+          <div id="overlay" class="overlay">
 
-            <a href="works.html"><img src="images/works_list_pc@2x-8.png" alt="works一覧へ戻るボタン"
-                class="works_list_pc_button"></a>
+            <div class="modal_item-area">
+              <!--×マーク　↓  -->
+              <span class="batsu"></span>
 
+              <div class="modal_item-area-inner-02">
+
+                <img src="images/Designcafe-lp-pc.jpg" alt="デザインカフェのPC版LP" class="lp-02_pc">
+                <img src="images/Designcafe-lp-sp.jpg" alt="デザインカフェのスマホ版LP" class="lp_sp">
+              </div>
+            </div>
           </div>
         </div>
+        <p class="works_detail_title">DesignCafeのWEBサイト（架空）</p>
+
+        <div class="about_production">
+          <div class="line"></div>
+          <dl>
+            <dt>概要</dt>
+            <dd>カフェサイトのWEBサイト（架空）</dd>
+            <dt>制作範囲</dt>
+            <dd>コーディング</dd>
+            <dt>使用ツール</dt>
+            <dd>Visual Studio Code/Illustrator</dd>
+          </dl>
+          <div class="line"></div>
+          <p class="about_production_text">スクールの課題として制作しました。<br>
+            Illustratorで制作されたデザインカンプからHTML、CSS、jQueryを使用してコーディングを行いました。
+            デザインカンプを忠実に再現するように微調整を重ね、ヘッダーやギャラリーセクションはjQueryにて動きのあるサイトに仕上げました。
+          </p>
+
+          <a href="works.html"><img src="images/works_list_pc@2x-8.png" alt="works一覧へ戻るボタン"
+              class="works_list_pc_button"></a>
+
+        </div>
+
 
       </section>
 
@@ -108,7 +125,8 @@
             ご依頼、ご相談等ございましたら<br>
             お気軽にお問合せくださいませ。</p>
 
-          <div class="contact_button"><img src="images/contact_pc.png" alt="お問い合わせのボタン"></div>
+          <div class="contact_button"><a href="contact.html"><img src="images/contact_pc.png" alt="お問い合わせのボタン"></a>
+          </div>
         </div>
 
       </section>
@@ -166,6 +184,52 @@
         return false;
       });
     });
+
+
+    // ハンバーガーボタン
+    $(function () {
+      $('.hamburger').on('click', function () {
+        $('.hamburger').toggleClass('open');
+        $('.sp_nav').fadeToggle();
+      });
+    });
+
+    // ページトップへ戻るボタンの動き↓
+    $(function () {
+      // ページトップへ戻るボタンの要素を隠す
+      $('.back_to_top, .back_to_top-ostrich').hide();
+      // スクロールした場合のアクション
+      $(window).scroll(function () {
+        // スクロール位置が200px超えたらボタンをフェードイン
+        if ($(this).scrollTop() > 200) {
+          $('.back_to_top, .back_to_top-ostrich').fadeIn();
+        }
+      });
+
+      // ページトップへ戻るボタンをクリックした時の戻るスピードの速さ
+      $('.back_to_top, .back_to_top-ostrich').click(function () {
+        $('html,body').animate({
+          scrollTop: 0
+        }, 500);
+        return false;
+      });
+    });
+
+
+    // 歩くダチョウ
+    $(window).on('scroll', function () {
+      let scroll_num = Math.floor($(this).scrollTop());
+      let scroll_change_num = String(scroll_num).slice(-2);
+      console.log(scroll_change_num);
+      if (scroll_change_num < 33) {
+        $('.back_to_top-ostrich img').attr('src', 'images/back_to_top-ostrich@2x-8.png');
+      } else if (scroll_change_num < 66) {
+        $('.back_to_top-ostrich img').attr('src', 'images/ostrich02@2x-8.png');
+      } else {
+        $('.back_to_top-ostrich img').attr('src', 'images/ostrich03@2x-8.png');
+      }
+    });
+
 
   </script>
 

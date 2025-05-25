@@ -207,6 +207,9 @@ header {
   color: white;
 }
 
+
+
+
 .mask {
   width: 100%;
   height: 100%;
@@ -229,55 +232,94 @@ header {
   /* マスクを表示する */
 }
 
-/* PC画面にマウスホバー時　ここまで↑ */
 
-
-/* works(LPがある)PC画像のマウスホバー時　ここから↓ */
-
-.works_web_pc {
-  transition: 0.3s;
-}
-
-.works_web_pc:hover {
-  filter: brightness(0.7) blur(1px);
-
-
-}
+/* WORKS PCモックアップ画像へのホバー */
 
 
 .modal_item {
-  display: block;
+  width: 60%;
+  margin: 0 auto;
+  overflow: hidden;
   position: relative;
-  /*親要素にrelative*/
+  cursor: pointer;
 }
 
-.caption {
-  margin: 0;
-  font-size: 40px;
-  color: white;
-}
-
-.mask {
+.caption02 {
   width: 100%;
   height: 100%;
+  visibility: hidden;
+  /* 文字を表示しない */
+  font-size: 80%;
+  color: #fff;
+  top: 30%;
+  left: 1.2%;
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  /* マスクを表示しない */
-  background-color: rgba(117, 85, 63, 0.7);
-  /* マスクは半透明 */
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  text-align: center;
+
+  -webkit-transition: all 0.4s step-end;
+  transition: all 0.4s step-end;
 }
 
-.modal_item:hover .mask {
-  opacity: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* マスクを表示する */
+.modal_item:hover .caption02 {
+  visibility: visible;
+  /* 文字を表示する */
 }
+
+.modal_item .caption02 p {
+  font-size: 130%;
+  padding-top: 75px;
+  color: #fff;
+  opacity: 0;
+  /* ホバーが解除された時すぐ消えるように、文字を表示しない */
+}
+
+.modal_item:hover .caption02 p {
+  opacity: 1;
+  /* 文字を表示する */
+}
+
+.modal_item .mask-mock-up,
+.modal_item .mask-mock-up02 {
+  width: 100%;
+  height: 50%;
+  /* 高さは半部のサイズ */
+  position: absolute;
+  left: 0;
+  background-color: rgba(117, 85, 63, 0.4);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.modal_item .mask-mock-up {
+  top: -50%;
+  /* 枠の上に置いて表示させない */
+}
+
+.modal_item:hover .mask-mock-up {
+  top: 0;
+  /* 下にずらして表示する */
+}
+
+.modal_item .mask-mock-up02 {
+  bottom: -50%;
+  /* 枠の下に置いて表示させない */
+}
+
+.modal_item:hover .mask-mock-up02 {
+  bottom: 0;
+  /* 上にずらして表示する */
+}
+
+
+
+
+
+
+/* PC画面にマウスホバー時　ここまで↑ */
+
+
+
+
 
 /* PC画面にマウスホバー時　ここまで↑ */
 
@@ -313,9 +355,6 @@ header {
 .about_home_pc {
   margin-top: 80px;
   width: 37%;
-
-
-
 }
 
 .about_container {
@@ -503,12 +542,7 @@ dd {
 
 }
 
-/* WORKS　モーダルがある制作物 */
-.works_web_pc {
-  width: 55%;
-  cursor: pointer;
-  transition: 0.3s;
-}
+
 
 .works_pop-burger_pc {
   width: 40%;
@@ -518,26 +552,33 @@ dd {
 
 .modal_item-area {
   display: none;
-  height: 100vh;
+  height: 70vh;
+  margin-top: 15vh;
   width: 80%;
   background: rgba(255, 255, 255, 1);
-  position: fixed;
-  top: 50%;
-  left: 50%;
+
   overflow: scroll;
 
-  transform: translate(-50%, -50%);
-
+  margin: 0 auto;
   margin: 100px;
-
 
 }
 
-
-.modal_item-area-inner {
+.modal_item-area-inner-01 {
   display: flex;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: center;
+  /* 左右に余白入れる */
+
+  margin-top: 100px;
+  padding: 50px;
+}
+
+
+.modal_item-area-inner-02 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   /* 左右に余白入れる */
   padding: 50px;
   margin: 80px;
@@ -559,8 +600,8 @@ dd {
 /* モーダル×印　↓ */
 span.batsu {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 17%;
+  right: 12%;
 }
 
 .batsu {
@@ -600,7 +641,13 @@ span.batsu {
 
 
 .lp_pc {
-  width: 60%;
+  width: 65%;
+  border: 2px solid #e09868;
+}
+
+
+.lp-02_pc {
+  width: 65%;
   border: 2px solid #e09868;
 }
 
@@ -1042,8 +1089,6 @@ input[type="email"] {
     font-size: 30px;
   }
 
-
-
 }
 
 
@@ -1072,12 +1117,9 @@ input[type="email"] {
     width: 100%;
   }
 
-
-
   .fv img {
     margin-top: 0;
   }
-
 
   .content_wrap {
     max-width: 375px;
@@ -1236,7 +1278,7 @@ input[type="email"] {
     width: 190px;
   }
 
-  .back_to_top {
+  .back_to_btn {
     display: none;
   }
 
@@ -1263,6 +1305,12 @@ input[type="email"] {
     margin-top: 60px;
     margin-bottom: 20px;
   }
+
+
+  .works_web_pc {
+    width: 100%;
+  }
+
 
   .line {
     border-top: 1px solid #bc8b69;
@@ -1325,6 +1373,44 @@ input[type="email"] {
     width: 100%;
   }
 
+
+  /* スマホ版　モーダル */
+
+  .modal_item-area {
+    display: none;
+    height: 70vh;
+    margin-top: 15vh;
+    width: 90%;
+    background: rgba(255, 255, 255, 1);
+
+    overflow: scroll;
+
+    margin: 0 auto;
+    margin-top: 80px;
+  }
+
+  .modal_item-area-inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* 左右に余白入れる */
+    padding: 30px;
+    margin: 0 auto;
+
+  }
+
+  .lp_pc {
+    width: 60%;
+  }
+
+  .lp_sp {
+    width: 30%;
+  }
+
+  span.batsu {
+    top: 8%;
+    right: 6%;
+  }
 
   /* スマホ版 aboutのページ */
   .about-background_wrap {

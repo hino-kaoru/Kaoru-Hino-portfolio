@@ -20,6 +20,8 @@
 
 
   <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -178,6 +180,20 @@
       <p class="copyright"><small>&copy;2025 hinono design</small></p>
     </div>
   </footer>
+
+  <script>
+
+    // ハンバーガーボタン
+    $(function () {
+      $('.hamburger').on('click', function () {
+        $('.hamburger').toggleClass('open');
+        $('.sp_nav').fadeToggle();
+      });
+    });
+
+  </script>
+
+
 </body>
 
 </html>

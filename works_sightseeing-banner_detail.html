@@ -20,6 +20,9 @@
 
 
   <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -34,16 +37,27 @@
           <li><a href="contact.html">contact</a></li>
         </ul>
       </nav>
+
+      <!-- スマホ版　ハンバーガーメニュー -->
+      <div class="hamburger"><span></span></div>
+      <nav class="sp_nav">
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="works.html">works</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- ハンバーガーメニューここまで↑ -->
+
     </div>
   </header>
 
   <!-- contents 全体 -->
   <div class="content_wrap">
 
-
-
     <div class="contents">
-
 
       <!-- works -->
       <section class="works">
@@ -88,7 +102,8 @@
             ご依頼、ご相談等ございましたら<br>
             お気軽にお問合せくださいませ。</p>
 
-          <div class="contact_button"><img src="images/contact_pc.png" alt="お問い合わせのボタン"></div>
+          <div class="contact_button"><a href="contact.html"><img src="images/contact_pc.png" alt="お問い合わせのボタン"></a>
+          </div>
         </div>
 
       </section>
@@ -107,6 +122,55 @@
       <p class="copyright"><small>&copy;2025 hinono design</small></p>
     </div>
   </footer>
+
+  <script>
+
+    // ハンバーガーボタン
+    $(function () {
+      $('.hamburger').on('click', function () {
+        $('.hamburger').toggleClass('open');
+        $('.sp_nav').fadeToggle();
+      });
+    });
+
+    // ページトップへ戻るボタンの動き↓
+    $(function () {
+      // ページトップへ戻るボタンの要素を隠す
+      $('.back_to_top, .back_to_top-ostrich').hide();
+      // スクロールした場合のアクション
+      $(window).scroll(function () {
+        // スクロール位置が200px超えたらボタンをフェードイン
+        if ($(this).scrollTop() > 200) {
+          $('.back_to_top, .back_to_top-ostrich').fadeIn();
+        }
+      });
+
+      // ページトップへ戻るボタンをクリックした時の戻るスピードの速さ
+      $('.back_to_top, .back_to_top-ostrich').click(function () {
+        $('html,body').animate({
+          scrollTop: 0
+        }, 500);
+        return false;
+      });
+    });
+
+
+    // 歩くダチョウ
+    $(window).on('scroll', function () {
+      let scroll_num = Math.floor($(this).scrollTop());
+      let scroll_change_num = String(scroll_num).slice(-2);
+      console.log(scroll_change_num);
+      if (scroll_change_num < 33) {
+        $('.back_to_top-ostrich img').attr('src', 'images/back_to_top-ostrich@2x-8.png');
+      } else if (scroll_change_num < 66) {
+        $('.back_to_top-ostrich img').attr('src', 'images/ostrich02@2x-8.png');
+      } else {
+        $('.back_to_top-ostrich img').attr('src', 'images/ostrich03@2x-8.png');
+      }
+    });
+
+  </script>
+
 </body>
 
 </html>
