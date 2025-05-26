@@ -77,13 +77,14 @@
           <div id="overlay" class="overlay">
 
             <div class="modal_item-area">
-              <!--×マーク　↓  -->
-              <span class="batsu"></span>
+
 
               <div class="modal_item-area-inner-02">
 
                 <img src="images/Designcafe-lp-pc.jpg" alt="デザインカフェのPC版LP" class="lp-02_pc">
                 <img src="images/Designcafe-lp-sp.jpg" alt="デザインカフェのスマホ版LP" class="lp_sp">
+                <!--×マーク　↓  -->
+                <span class="batsu"></span>
               </div>
             </div>
           </div>
@@ -111,9 +112,7 @@
 
         </div>
 
-
       </section>
-
 
       <!-- contact -->
 
@@ -136,10 +135,14 @@
 
   <footer class="footer">
     <div class="footer_wrap">
-      <p class="back_to_top"><a href="#title"><img src="images/backtotop_pc@2x-8.png" alt="トップページに戻るボタン"></a>
-      </p>
-      <p class="back_to_top-ostrich"><a href="#title"><img src="images/back_to_top-ostrich@2x-8.png" alt="ダチョウのボタン"></a>
-      </p>
+      <div class="back_to_top-wrap">
+        <p class="back_to_top"><a href="#title"><img src="images/backtotop_pc@2x-8.png" alt="トップページに戻るボタン"></a>
+        </p>
+
+        <p class="back_to_top-ostrich"><a href="#title"><img src="images/back_to_top-ostrich@2x-8.png"
+              alt="ダチョウのボタン"></a>
+        </p>
+      </div>
 
       <div class="footer_image"><img src="images/footer_pc@2x-8.png" alt="フッター画像"></div>
       <p class="copyright"><small>&copy;2025 hinono design</small></p>
@@ -220,7 +223,7 @@
     $(window).on('scroll', function () {
       let scroll_num = Math.floor($(this).scrollTop());
       let scroll_change_num = String(scroll_num).slice(-2);
-      console.log(scroll_change_num);
+
       if (scroll_change_num < 33) {
         $('.back_to_top-ostrich img').attr('src', 'images/back_to_top-ostrich@2x-8.png');
       } else if (scroll_change_num < 66) {

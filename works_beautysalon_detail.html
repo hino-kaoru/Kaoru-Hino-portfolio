@@ -68,49 +68,47 @@
             <!-- モーダル開く　PC画面 -->
             <div class="modal_item">
               <img src="images/works_detail_beautysalon_pc@2x-8.png" alt="美容室のLP" class="works_web_pc">
+
+              <p class="caption02">view all</p>
             </div>
+          </div>
 
-            <!-- オーバーレイ -->
-            <div id="overlay" class="overlay">
+          <!-- オーバーレイ -->
+          <div id="overlay" class="overlay">
 
-              <div class="modal_item-area">
-
+            <div class="modal_item-area">
+              <div class="modal_item-area-inner-01">
+                <img src="images/kadai5_lp-pc.jpg" alt="美容室のPC版LP" class="lp-01_pc">
                 <!--×マーク　↓  -->
                 <span class="batsu"></span>
-
-                <div class="modal_item-area-inner-01">
-                  <img src="images/kadai5_lp-pc.jpg" alt="美容室のPC版LP" class="lp-01_pc">
-
-                </div>
               </div>
             </div>
           </div>
-          <p class="works_detail_title">リニューアルオープンの美容室のLP（架空）</p>
+        </div>
+        <p class="works_detail_title">リニューアルオープンの美容室のLP（架空）</p>
 
-          <div class="about_production">
-            <div class="line"></div>
-            <dl>
-              <dt>概要</dt>
-              <dd>美容室のWEBサイト（架空）</dd>
-              <dt>制作範囲</dt>
-              <dd>素材収集、素材加工、デザイン</dd>
-              <dt>使用ツール</dt>
-              <dd>Illustrator/photoshop</dd>
-            </dl>
-            <div class="line"></div>
-            <p class="about_production_text">スクールの課題として制作しました。<br>
-              美容室のコーポレートカラーのピンクをメインに使用し、子供同伴OKなサロンであることが伝わるような柔らかい印象を与えるデザインにしました。<br>
-              新規の方も安心して来店してもらえるように店内の雰囲気が伝わるような写真やイラストを配置し、幅広い年代の顧客の獲得につながるようなサイトになるように工夫しました。
-            </p>
+        <div class="about_production">
+          <div class="line"></div>
+          <dl>
+            <dt>概要</dt>
+            <dd>美容室のWEBサイト（架空）</dd>
+            <dt>制作範囲</dt>
+            <dd>素材収集、素材加工、デザイン</dd>
+            <dt>使用ツール</dt>
+            <dd>Illustrator/photoshop</dd>
+          </dl>
+          <div class="line"></div>
+          <p class="about_production_text">スクールの課題として制作しました。<br>
+            美容室のコーポレートカラーのピンクをメインに使用し、子供同伴OKなサロンであることが伝わるような柔らかい印象を与えるデザインにしました。<br>
+            新規の方も安心して来店してもらえるように店内の雰囲気が伝わるような写真やイラストを配置し、幅広い年代の顧客の獲得につながるようなサイトになるように工夫しました。
+          </p>
 
-            <a href="works.html"><img src="images/works_list_pc@2x-8.png" alt="works一覧へ戻るボタン"
-                class="works_list_pc_button"></a>
+          <a href="works.html"><img src="images/works_list_pc@2x-8.png" alt="works一覧へ戻るボタン"
+              class="works_list_pc_button"></a>
 
-          </div>
         </div>
 
       </section>
-
 
       <!-- contact -->
 
@@ -133,10 +131,13 @@
 
   <footer class="footer">
     <div class="footer_wrap">
-      <p class="back_to_top"><a href="#title"><img src="images/backtotop_pc@2x-8.png" alt="トップページに戻るボタン"></a>
-      </p>
-      <p class="back_to_top-ostrich"><a href="#title"><img src="images/back_to_top-ostrich@2x-8.png" alt="ダチョウのボタン"></a>
-      </p>
+      <div class="back_to_top-wrap">
+        <p class="back_to_top"><a href="#title"><img src="images/backtotop_pc@2x-8.png" alt="トップページに戻るボタン"></a>
+        </p>
+        <p class="back_to_top-ostrich"><a href="#title"><img src="images/back_to_top-ostrich@2x-8.png"
+              alt="ダチョウのボタン"></a>
+        </p>
+      </div>
 
       <div class="footer_image"><img src="images/footer_pc@2x-8.png" alt="フッター画像"></div>
       <p class="copyright"><small>&copy;2025 hinono design</small></p>
@@ -195,7 +196,7 @@
     $(window).on('scroll', function () {
       let scroll_num = Math.floor($(this).scrollTop());
       let scroll_change_num = String(scroll_num).slice(-2);
-      console.log(scroll_change_num);
+
       if (scroll_change_num < 33) {
         $('.back_to_top-ostrich img').attr('src', 'images/back_to_top-ostrich@2x-8.png');
       } else if (scroll_change_num < 66) {

@@ -27,9 +27,6 @@
 
 <body>
 
-
-
-
   <header class="header">
     <div class="header-wrap">
       <h1 class="logo"><a href="index.html"><img src="images/logo_pc.png" alc="logo"></a></h1>
@@ -40,6 +37,19 @@
           <li><a href="contact.html">contact</a></li>
         </ul>
       </nav>
+
+      <!-- スマホ版　ハンバーガーメニュー -->
+      <div class="hamburger"><span></span></div>
+      <nav class="sp_nav">
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="works.html">works</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- ハンバーガーメニューここまで↑ -->
     </div>
   </header>
 
@@ -53,38 +63,50 @@
       <section class="contact">
 
         <div class="contact_wrap">
+          <form class="contact"
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdiItLQg8-cF4is6-Um8QJ4FWAYQc9HvTcXEboUc5XX0b9JuA/formResponse"
+            method="post" target="hidden_iframe" onsubmit="submitted=true;">
 
-          <div class="contact_personal-information_container">
-            <h2 class="title-contact">contact</h2>
+            <div class="contact_personal-information_container">
+              <h2 class="title-contact">contact</h2>
 
-            <div class="input-field">
-              <label>
-                お名前
-                <input type="text" placeholder="氏名"></label>
+              <div class="input-field">
+                <label>
+                  お名前
+                  <input type="text" name="entry.1991281900" placeholder="氏名" required></label>
+              </div>
+
+              <div class="input-field">
+                <label> メールアドレス
+                  <form>
+                    <input type="email" pname="entry.1835529604" placeholder="メールアドレス" required>
+
+                  </form>
+                </label>
+              </div>
+
+              <div class="input-field">
+                <label>お問い合わせ内容
+                  <textarea name="entry.855231277" class="textarea-large" rows="6"
+                    placeholder="ここにお問合せ内容を入力してください"></textarea>
+                </label>
+              </div>
+
             </div>
-
-            <div class="input-field">
-              <label> メールアドレス
-                <form>
-                  <input type="email" placeholder="メールアドレス" name="example" required>
-
-                </form>
-              </label>
+            <div class="button-area">
+              <!-- 送信ボタン -->
+              <button class="button_sbbmit" type="button">送信する</button>
             </div>
+          </form>
 
-            <div class="input-field">
-              <label>お問い合わせ内容
-                <textarea name="example" class="textarea-large" rows="6" placeholder="ここにお問合せ内容を入力してください"></textarea>
-              </label>
-            </div>
+          <script type="text/javascript">
+            var submitted = false;
+          </script>
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display: none"
+            onload="if(submitted)  {window.location='thanks.html';}"></iframe>
 
-          </div>
-          <div class="button-area">
-            <!-- 送信ボタン -->
-            <button class="button_sbbmit" type="button">送信する</button>
-          </div>
+
         </div>
-
       </section>
 
     </div>
@@ -111,6 +133,44 @@
         $('.sp_nav').fadeToggle();
       });
     });
+
+    // ページトップへ戻るボタンの動き↓
+    $(function () {
+      // ページトップへ戻るボタンの要素を隠す
+      $('.back_to_top, .back_to_top-ostrich').hide();
+      // スクロールした場合のアクション
+      $(window).scroll(function () {
+        // スクロール位置が200px超えたらボタンをフェードイン
+        if ($(this).scrollTop() > 200) {
+          $('.back_to_top, .back_to_top-ostrich').fadeIn();
+        }
+      });
+
+      // ページトップへ戻るボタンをクリックした時の戻るスピードの速さ
+      $('.back_to_top, .back_to_top-ostrich').click(function () {
+        $('html,body').animate({
+          scrollTop: 0
+        }, 500);
+        return false;
+      });
+    });
+
+
+    // 歩くダチョウ
+    $(window).on('scroll', function () {
+      let scroll_num = Math.floor($(this).scrollTop());
+      let scroll_change_num = String(scroll_num).slice(-2);
+
+      if (scroll_change_num < 33) {
+        $('.back_to_top-ostrich img').attr('src', 'images/back_to_top-ostrich@2x-8.png');
+      } else if (scroll_change_num < 66) {
+        $('.back_to_top-ostrich img').attr('src', 'images/ostrich02@2x-8.png');
+      } else {
+        $('.back_to_top-ostrich img').attr('src', 'images/ostrich03@2x-8.png');
+      }
+    });
+
+
 
   </script>
 </body>

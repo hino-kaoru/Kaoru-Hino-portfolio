@@ -207,8 +207,7 @@ header {
   color: white;
 }
 
-
-
+/* indexやwoks一覧画像へのホバー時の動き　ここから↓ */
 
 .mask {
   width: 100%;
@@ -232,12 +231,14 @@ header {
   /* マスクを表示する */
 }
 
+/*indexやwoks一覧画像へのホバー時の動き　ここまで↑  */
+
 
 /* WORKS PCモックアップ画像へのホバー */
 
 
 .modal_item {
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
@@ -251,7 +252,7 @@ header {
   /* 文字を表示しない */
   font-size: 80%;
   color: #fff;
-  top: 30%;
+  top: 32%;
   left: 1.2%;
   position: absolute;
   text-align: center;
@@ -260,64 +261,15 @@ header {
   transition: all 0.4s step-end;
 }
 
+.modal_item:hover .works_web_pc {
+  filter: brightness(40%);
+  cursor: pointer;
+}
+
 .modal_item:hover .caption02 {
   visibility: visible;
   /* 文字を表示する */
 }
-
-.modal_item .caption02 p {
-  font-size: 130%;
-  padding-top: 75px;
-  color: #fff;
-  opacity: 0;
-  /* ホバーが解除された時すぐ消えるように、文字を表示しない */
-}
-
-.modal_item:hover .caption02 p {
-  opacity: 1;
-  /* 文字を表示する */
-}
-
-.modal_item .mask-mock-up,
-.modal_item .mask-mock-up02 {
-  width: 100%;
-  height: 50%;
-  /* 高さは半部のサイズ */
-  position: absolute;
-  left: 0;
-  background-color: rgba(117, 85, 63, 0.4);
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
-.modal_item .mask-mock-up {
-  top: -50%;
-  /* 枠の上に置いて表示させない */
-}
-
-.modal_item:hover .mask-mock-up {
-  top: 0;
-  /* 下にずらして表示する */
-}
-
-.modal_item .mask-mock-up02 {
-  bottom: -50%;
-  /* 枠の下に置いて表示させない */
-}
-
-.modal_item:hover .mask-mock-up02 {
-  bottom: 0;
-  /* 上にずらして表示する */
-}
-
-
-
-
-
-
-/* PC画面にマウスホバー時　ここまで↑ */
-
-
 
 
 
@@ -570,8 +522,8 @@ dd {
   justify-content: center;
   /* 左右に余白入れる */
 
-  margin-top: 100px;
-  padding: 50px;
+  padding: 60px;
+  position: relative;
 }
 
 
@@ -580,8 +532,9 @@ dd {
   align-items: flex-start;
   justify-content: space-between;
   /* 左右に余白入れる */
-  padding: 50px;
-  margin: 80px;
+  padding: 100px;
+
+  position: relative;
 
 }
 
@@ -594,14 +547,15 @@ dd {
   background-color: rgba(117, 85, 63, 0.7);
   width: 100%;
   height: 100%;
+  z-index: 100000;
 
 }
 
 /* モーダル×印　↓ */
 span.batsu {
   position: absolute;
-  top: 17%;
-  right: 12%;
+  top: 10px;
+  right: 10px;
 }
 
 .batsu {
@@ -691,7 +645,7 @@ span.batsu {
   max-width: 1000px;
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: flex-start;
 }
 
 .my-photo {
@@ -707,19 +661,19 @@ span.batsu {
 
 .background_text01 {
   font-size: 16px;
-  line-height: 2;
+  line-height: 1.9;
   margin-bottom: 24px;
 }
 
 .background_text02 {
   font-size: 16px;
-  line-height: 2.18;
+  line-height: 2;
   margin-top: 24px;
 }
 
 .background_text03 {
   font-size: 16px;
-  line-height: 2.18;
+  line-height: 2;
   margin-top: 24px;
   margin-bottom: 100px;
 }
@@ -761,6 +715,10 @@ span.batsu {
 
 
 /* contactのページ */
+
+.content_wrap_contact {
+  margin-left: 240px;
+}
 
 /* 入力欄 */
 .contact_personal-information_container {
@@ -890,6 +848,7 @@ input[type="email"] {
 
 .footer-contact_image img {
   width: 100%;
+  margin-top: 80px;
 }
 
 /* thanksページ */
@@ -1002,6 +961,60 @@ input[type="email"] {
 @media screen and (max-width:1100px) {
 
   /* PCメニュー消してハンバーガーメニューを出す */
+
+
+}
+
+
+
+
+
+/* 画面幅が小さくなってもヘッダーにかぶらないように */
+@media screen and (max-width: 1024px) {
+  .content_wrap {
+    margin-left: 240px;
+  }
+}
+
+
+
+
+
+
+
+/* スマホ版 */
+@media screen and (max-width:767px) {
+
+  /* HOMEのページ */
+
+
+  .fv img {
+    margin-top: 0;
+  }
+
+  .content_wrap {
+    max-width: 375px;
+    margin: 0 auto;
+  }
+
+
+
+  .logo img {
+    width: 50px;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
+  .fv {
+    margin: 0;
+    padding: 0;
+
+  }
+
+  header {
+    width: 100%;
+  }
+
   .pc_nav {
     display: none;
   }
@@ -1089,59 +1102,8 @@ input[type="email"] {
     font-size: 30px;
   }
 
-}
 
 
-
-
-
-/* 画面幅が小さくなってもヘッダーにかぶらないように */
-@media screen and (max-width: 1024px) {
-  .content_wrap {
-    margin-left: 240px;
-  }
-}
-
-
-
-
-
-
-
-/* スマホ版 */
-@media screen and (max-width:767px) {
-
-  /* HOMEのページ */
-
-  header {
-    width: 100%;
-  }
-
-  .fv img {
-    margin-top: 0;
-  }
-
-  .content_wrap {
-    max-width: 375px;
-    margin: 0 auto;
-  }
-
-  .logo img {
-    width: 50px;
-    margin-top: 40px;
-    margin-left: 30px;
-  }
-
-  .fv {
-    margin: 0;
-    padding: 0;
-
-  }
-
-
-  .pc_nav {
-    display: none;
-  }
 
   .introduction {
     position: absolute;
@@ -1262,6 +1224,12 @@ input[type="email"] {
     padding-right: 0;
   }
 
+
+  .content_wrap_contact {
+    margin-left: 0;
+  }
+
+
   .title {
     margin-top: 80px;
   }
@@ -1278,13 +1246,11 @@ input[type="email"] {
     width: 190px;
   }
 
-  .back_to_btn {
+  /* スマホ版ではダチョウ消える */
+  .back_to_top-wrap {
     display: none;
   }
 
-  .back_to_top-ostrich {
-    display: none;
-  }
 
   .copyright {
     margin-left: 0;
@@ -1310,6 +1276,24 @@ input[type="email"] {
   .works_web_pc {
     width: 100%;
   }
+
+
+  .caption02 {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    /* 文字を表示しない */
+    font-size: 45%;
+    color: #fff;
+    top: 30%;
+    left: 1.1%;
+    position: absolute;
+    text-align: center;
+
+    -webkit-transition: all 0.4s step-end;
+    transition: all 0.4s step-end;
+  }
+
 
 
   .line {
@@ -1399,6 +1383,16 @@ input[type="email"] {
 
   }
 
+  .modal_item-area-inner-02 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* 左右に余白入れる */
+    padding: 40px;
+    margin: 0 auto;
+
+  }
+
   .lp_pc {
     width: 60%;
   }
@@ -1408,8 +1402,8 @@ input[type="email"] {
   }
 
   span.batsu {
-    top: 8%;
-    right: 6%;
+    top: 10px;
+    right: 10px;
   }
 
   /* スマホ版 aboutのページ */
@@ -1551,7 +1545,7 @@ input[type="email"] {
 
   .logo_thanks {
     width: 50px;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-left: 30px;
   }
 
