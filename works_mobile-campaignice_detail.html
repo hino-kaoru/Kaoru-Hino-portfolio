@@ -145,6 +145,9 @@
         // スクロール位置が200px超えたらボタンをフェードイン
         if ($(this).scrollTop() > 200) {
           $('.back_to_top, .back_to_top-ostrich').fadeIn();
+        } else {
+          // スクロール位置が200pxに戻ったらボタン消える
+          $('.back_to_top, .back_to_top-ostrich').fadeOut(200);
         }
       });
 

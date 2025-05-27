@@ -661,7 +661,7 @@ span.batsu {
 
 .background_text01 {
   font-size: 16px;
-  line-height: 1.9;
+  line-height: 2;
   margin-bottom: 24px;
 }
 
@@ -1410,6 +1410,7 @@ input[type="email"] {
   .about-background_wrap {
     max-width: 315px;
     margin: 0 auto;
+    padding-right: 0;
   }
 
   .title_about-background {
