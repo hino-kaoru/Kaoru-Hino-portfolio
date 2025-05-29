@@ -84,9 +84,9 @@ body {
 
 .introduction {
   position: absolute;
-  top: 30%;
+  top: 27%;
   left: 7%;
-  font-size: 40px;
+  font-size: 37px;
   color: #d898a1;
   font-family: "futura-pt", sans-serif;
   font-weight: 400;
@@ -312,7 +312,8 @@ header {
 }
 
 .about_container {
-  width: 44%;
+  width: 100%;
+  padding-right: 20px;
 
 }
 
@@ -324,7 +325,8 @@ about-home_datyou {
 
 .about_container .name {
   font-size: 45px;
-  margin-bottom: 50px;
+  line-height: 1.5;
+  margin-bottom: 30px;
 }
 
 .about_container p {
@@ -335,8 +337,8 @@ about-home_datyou {
 
 .view_more_about {
 
-  margin-top: 55%;
-  margin-left: 55%;
+  margin-top: 15%;
+  margin-left: 62%;
 }
 
 .view_more-button {
@@ -344,11 +346,16 @@ about-home_datyou {
   transition: all 0.3s;
 }
 
-.view_more_about:hover .view_more-button {
+.view_more_about:hover .view_more-about-btn {
   transform: scale(1.2);
 }
 
-
+.view_more-about-btn {
+  width: 100%;
+  max-width: 175px;
+  min-width: 150px;
+  transition: all 0.3s;
+}
 
 
 
@@ -483,6 +490,11 @@ dd {
   width: 180px;
   margin-top: 160px;
 }
+
+.works_list-btn:hover .works_list_pc_button {
+  transform: scale(1.2);
+}
+
 
 .line {
   border-style: none;
@@ -994,6 +1006,7 @@ input[type="email"] {
 
   .fv img {
     margin-top: 0;
+    width: 100%;
   }
 
   .content_wrap {
@@ -1201,7 +1214,7 @@ input[type="email"] {
   }
 
   .about_container .name {
-    margin-top: 80px;
+    margin-top: 30px;
     font-size: 30px;
     margin-bottom: 0;
   }
