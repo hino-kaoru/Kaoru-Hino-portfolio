@@ -25,6 +25,17 @@
 
 <body>
 
+  <!-- ローディング -->
+
+  <div class="loading">
+
+    <div class="loading-wrapper">
+      <div class="warking-datyou"></div>
+    </div>
+
+  </div>
+
+
   <!-- 背景を砂漠に固定 -->
   <div class="background">
 
@@ -34,7 +45,7 @@
       <div class="header-wrap">
 
         <!-- ロゴ -->
-        <h1 class="logo"><a href="index.html"><img src="images/logo_pc.png" alc="logo"></a></h1>
+        <h1 class="logo"><a href="index.html"><img src="images/logo_pc.png" alt="hinonodesignのロゴ"></a></h1>
         <nav class="pc_nav">
 
           <ul>
@@ -100,6 +111,7 @@
         <!-- works -->
         <section class="works">
           <h2 class="title">works</h2>
+          <p class="works-description">画像をタップすると制作物の詳細ページに移動します</p>
           <div class="works_wrap">
 
             <div class="works_detail_image-container">
@@ -135,7 +147,7 @@
             </div>
 
             <div class="works_detail_image-container">
-              <a href="works_detail_co-working detail.html"><img src="images/works_home_coworking_pc@2x-50.jpg"
+              <a href="works_detail_co-working-detail.html"><img src="images/works_home_coworking_pc@2x-50.jpg"
                   alt="コワーキングスペースLP">
                 <div class="mask">
                   <p class="caption">view more</p>
@@ -182,7 +194,9 @@
               ご依頼、ご相談等ございましたら<br>
               お気軽にお問合せくださいませ。</p>
 
-            <div class="contact_button"><a href="contact.html"><img src="images/contact_pc.png" alt="お問い合わせのボタン"></a>
+            <div class="contact_button"><a href="contact.html">
+                <p class="contact-btn">お問い合わせはこちら</p>
+              </a>
             </div>
           </div>
 
@@ -257,6 +271,44 @@
     });
 
   </script>
+
+
+
+
+
+  <!-- ローディング用↓ -->
+
+  <script>
+    var num = 0;
+    var img = $(".datyou-loading img"); // 画像のクラス名
+    var max = 3; // 画像枚数
+    var imgWidth = 540; // 画像の横幅
+    var speed = 90; // 画像切り替えスピード
+
+    setInterval(function () {
+      num++
+      img.css({ transform: 'translateX( -' + imgWidth * num + 'px)' });
+      if (num == max - 1) { num = 0; }
+    }, speed);
+  </script>
+
+
+  <script>
+    //ローディング画面を取得
+    const loading = document.querySelector(".loading");
+
+    //ページの読み込み完了時に処理を実行
+    window.addEventListener("load", () => {
+      //2秒後にローディング画面を非表示にする
+      setTimeout(() => {
+        loading.classList.add("loaded");
+      }, 1500);
+    });
+
+
+  </script>
+
+
 
 
 </body>
