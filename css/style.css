@@ -32,20 +32,8 @@ a {
   transition: 0.3s;
 }
 
-/* ホバーアクション　PCのみ */
-
-@media (hover: hover) and (pointer: fine) {
-  a:hover {
-    opacity: 0.7
-  }
-}
-
-/* IE11用に以下のコードも追加 */
-@media (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
-  a:hover {
-    opacity: 0.7
-  }
+a:hover {
+  opacity: 0.7;
 }
 
 /* ホバーアクション　ここまで↑ */
@@ -241,6 +229,9 @@ header {
   transition: all 0.2s ease;
 }
 
+
+
+
 .works_detail_image-container>a:hover .mask {
   opacity: 1;
   display: flex;
@@ -248,6 +239,7 @@ header {
   justify-content: center;
   /* マスクを表示する */
 }
+
 
 /*indexやwoks一覧画像へのホバー時の動き　ここまで↑  */
 
@@ -280,50 +272,26 @@ header {
 }
 
 /* ホバーアクション　↓ */
-@media (hover: hover) and (pointer: fine) {
-  .modal_item:hover .works_web_pc {
-    filter: brightness(40%);
-    cursor: pointer;
-  }
+.modal_item:hover .works_web_pc {
+  filter: brightness(40%);
+  cursor: pointer;
 }
 
-/* IE11用に以下のコードも追加 */
-@media (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
-  .modal_item:hover .works_web_pc {
-    filter: brightness(40%);
-    cursor: pointer;
-  }
+.modal_item:hover .caption02 {
+  visibility: visible;
+  /* 文字を表示する */
 }
-
-
-@media (hover: hover) and (pointer: fine) {
-  .modal_item:hover .caption02 {
-    visibility: visible;
-    /* 文字を表示する */
-  }
-}
-
-/* IE11用に以下のコードも追加 */
-@media (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
-  .modal_item:hover .caption02 {
-    visibility: visible
-      /* 文字を表示する */
-  }
-}
-
-
 
 /* PC画面にマウスホバー時　ここまで↑ */
 
 
 .view_more_works {
-
+  display: flex;
+  justify-content: flex-end;
   margin-top: 80px;
-  margin-left: 70%;
+  margin-left: auto;
   margin-bottom: 80px;
-
+  padding-right: 20px;
   cursor: pointer;
 
 }
@@ -334,30 +302,24 @@ header {
 }
 
 
-@media (hover: hover) and (pointer: fine) {
-  .view_more_works:hover .view_more-button {
-    transform: scale(1.2)
-  }
-}
-
-/* IE11用に以下のコードも追加 */
-@media (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
-  .view_more_works:hover .view_more-button {
-    transform: scale(1.2)
-  }
+.view_more_works:hover .view_more-button {
+  transform: scale(1.2);
 }
 
 
 
 /* about */
 
+picture {
+  width: 40%;
+}
+
 .about_wrap {
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 160px;
-  column-gap: 30px;
+
   margin-left: 30px;
 }
 
@@ -367,7 +329,7 @@ header {
 }
 
 .about_container {
-  width: 100%;
+  width: 50%;
   padding-right: 20px;
 
 }
@@ -393,7 +355,7 @@ about-home_datyou {
 .view_more_about {
 
   margin-top: 15%;
-  margin-left: 62%;
+
 }
 
 .view_more-button {
@@ -402,18 +364,8 @@ about-home_datyou {
 }
 
 
-@media (hover: hover) and (pointer: fine) {
-  .view_more_about:hover .view_more-about-btn {
-    transform: scale(1.2)
-  }
-}
-
-/* IE11用に以下のコードも追加 */
-@media (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
-  .view_more_about:hover .view_more-about-btn {
-    transform: scale(1.2)
-  }
+.view_more_about:hover .view_more-about-btn {
+  transform: scale(1.2);
 }
 
 
@@ -422,6 +374,8 @@ about-home_datyou {
   max-width: 175px;
   min-width: 150px;
   transition: all 0.3s;
+  margin-left: auto;
+  display: block;
 }
 
 
@@ -464,22 +418,10 @@ about-home_datyou {
 }
 
 
-@media (hover: hover) and (pointer: fine) {
-  .contact-btn:hover {
-    background-color: #75553f;
-    color: #f4ede1;
-    opacity: 1;
-  }
-}
-
-/* IE11用に以下のコードも追加 */
-@media (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
-  .contact-btn:hover {
-    background-color: #75553f;
-    color: #f4ede1;
-    opacity: 1;
-  }
+.contact-btn:hover {
+  background-color: #75553f;
+  color: #f4ede1;
+  opacity: 1;
 }
 
 
@@ -597,18 +539,8 @@ dd {
 }
 
 
-@media (hover: hover) and (pointer: fine) {
-  .works_list-btn:hover .works_list_pc_button {
-    transform: scale(1.2)
-  }
-}
-
-/* IE11用に以下のコードも追加 */
-@media (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
-  .works_list-btn:hover .works_list_pc_button {
-    transform: scale(1.2)
-  }
+.works_list-btn:hover .works_list_pc_button {
+  transform: scale(1.2);
 }
 
 
@@ -976,20 +908,10 @@ input[type="email"] {
 }
 
 
-@media (hover: hover) and (pointer: fine) {
-  .button_sbbmit:hover {
-    background-color: #e3dad6;
-    color: #bc8b69
-  }
-}
+.button_sbbmit:hover {
+  background-color: #e3dad6;
+  color: #bc8b69;
 
-/* IE11用に以下のコードも追加 */
-@media (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
-  .button_sbbmit:hover {
-    background-color: #e3dad6;
-    color: #bc8b69
-  }
 }
 
 
@@ -1318,7 +1240,13 @@ input[type="email"] {
     margin-bottom: 30px;
   }
 
+  .caption {
+    display: none;
+  }
 
+  .caption02 {
+    display: none;
+  }
 
   .view_more_works {
     width: 126px;
@@ -1703,6 +1631,9 @@ input[type="email"] {
     margin-top: 30px;
     margin-left: 30px;
   }
+
+
+
 
 }
 
