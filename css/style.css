@@ -32,9 +32,27 @@ a {
   transition: 0.3s;
 }
 
+/* ホバーアクション　PCのみ */
 a:hover {
   opacity: 0.7;
 }
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    opacity: 0.7
+  }
+}
+
+/* IE11用に以下のコードも追加 */
+@media (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  a:hover {
+    opacity: 0.7
+  }
+}
+
+/* ホバーアクション　ここまで↑ */
+
 
 ul {
   /*左の「・」を消す*/
@@ -264,14 +282,38 @@ header {
   transition: all 0.4s step-end;
 }
 
-.modal_item:hover .works_web_pc {
-  filter: brightness(40%);
-  cursor: pointer;
+/* ホバーアクション　↓ */
+@media (hover: hover) and (pointer: fine) {
+  .modal_item:hover .works_web_pc {
+    filter: brightness(40%);
+    cursor: pointer;
+  }
 }
 
-.modal_item:hover .caption02 {
-  visibility: visible;
-  /* 文字を表示する */
+/* IE11用に以下のコードも追加 */
+@media (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .modal_item:hover .works_web_pc {
+    filter: brightness(40%);
+    cursor: pointer;
+  }
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+  .modal_item:hover .caption02 {
+    visibility: visible;
+    /* 文字を表示する */
+  }
+}
+
+/* IE11用に以下のコードも追加 */
+@media (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .modal_item:hover .caption02 {
+    visibility: visible
+      /* 文字を表示する */
+  }
 }
 
 
@@ -294,9 +336,22 @@ header {
   transition: all 0.3s;
 }
 
-.view_more_works:hover .view_more-button {
-  transform: scale(1.2);
+
+@media (hover: hover) and (pointer: fine) {
+  .view_more_works:hover .view_more-button {
+    transform: scale(1.2)
+  }
 }
+
+/* IE11用に以下のコードも追加 */
+@media (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .view_more_works:hover .view_more-button {
+    transform: scale(1.2)
+  }
+}
+
+
 
 /* about */
 
@@ -349,9 +404,21 @@ about-home_datyou {
   transition: all 0.3s;
 }
 
-.view_more_about:hover .view_more-about-btn {
-  transform: scale(1.2);
+
+@media (hover: hover) and (pointer: fine) {
+  .view_more_about:hover .view_more-about-btn {
+    transform: scale(1.2)
+  }
 }
+
+/* IE11用に以下のコードも追加 */
+@media (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .view_more_about:hover .view_more-about-btn {
+    transform: scale(1.2)
+  }
+}
+
 
 .view_more-about-btn {
   width: 100%;
@@ -399,12 +466,24 @@ about-home_datyou {
   border-radius: 10px;
 }
 
-.contact-btn:hover {
-  background-color: #75553f;
-  color: #f4ede1;
-  opacity: 1;
+
+@media (hover: hover) and (pointer: fine) {
+  .contact-btn:hover {
+    background-color: #75553f;
+    color: #f4ede1;
+    opacity: 1;
+  }
 }
 
+/* IE11用に以下のコードも追加 */
+@media (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .contact-btn:hover {
+    background-color: #75553f;
+    color: #f4ede1;
+    opacity: 1;
+  }
+}
 
 
 
@@ -520,9 +599,21 @@ dd {
   margin-top: 160px;
 }
 
-.works_list-btn:hover .works_list_pc_button {
-  transform: scale(1.2);
+
+@media (hover: hover) and (pointer: fine) {
+  .works_list-btn:hover .works_list_pc_button {
+    transform: scale(1.2)
+  }
 }
+
+/* IE11用に以下のコードも追加 */
+@media (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .works_list-btn:hover .works_list_pc_button {
+    transform: scale(1.2)
+  }
+}
+
 
 
 .line {
@@ -887,12 +978,22 @@ input[type="email"] {
 
 }
 
-.button_sbbmit:hover {
-  background-color: #e3dad6;
-  color: #bc8b69;
 
+@media (hover: hover) and (pointer: fine) {
+  .button_sbbmit:hover {
+    background-color: #e3dad6;
+    color: #bc8b69
+  }
 }
 
+/* IE11用に以下のコードも追加 */
+@media (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .button_sbbmit:hover {
+    background-color: #e3dad6;
+    color: #bc8b69
+  }
+}
 
 
 
@@ -1329,9 +1430,6 @@ input[type="email"] {
     margin-bottom: 20px;
   }
 
-  a:hover {
-    pointer-events: none;
-  }
 
   .works_web_pc {
     width: 100%;
@@ -1645,7 +1743,7 @@ input[type="email"] {
 
   width: 180px;
   height: 180px;
-  background-color: #eeddbb;
+
   background-image: url(../images/datyou-wolk@2x-8.png);
   background-size: 540px 180px;
   animation: datyou-loading 1s steps(3) infinite;
