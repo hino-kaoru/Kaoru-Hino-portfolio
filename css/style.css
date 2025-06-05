@@ -304,6 +304,7 @@ header {
 
 .view_more_works:hover .view_more-button {
   transform: scale(1.2);
+  transition: all 1s ease-out;
 }
 
 
@@ -366,6 +367,7 @@ about-home_datyou {
 
 .view_more_about:hover .view_more-about-btn {
   transform: scale(1.2);
+  transition: all 1s ease-out;
 }
 
 
@@ -422,6 +424,7 @@ about-home_datyou {
   background-color: #75553f;
   color: #f4ede1;
   opacity: 1;
+  transition: all 1s ease-out;
 }
 
 
@@ -541,6 +544,7 @@ dd {
 
 .works_list-btn:hover .works_list_pc_button {
   transform: scale(1.2);
+  transition: all 1s ease-out;
 }
 
 
@@ -669,10 +673,12 @@ span.batsu {
   border: 2px solid #e09868;
 }
 
+
 .lp-01_pc {
-  width: 100%;
+  width: 65%;
   border: 2px solid #e09868;
 }
+
 
 
 .lp-02_pc {
