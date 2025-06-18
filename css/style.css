@@ -297,14 +297,22 @@ header {
 }
 
 .view_more-button {
+  transition-property: transform;
   width: 170px;
-  transition: all 0.3s;
+  transition-duration: 0.1s;
+  transition-delay: 0.1s;
+  transition-timing-function: ease;
+  opacity: 1.0;
 }
 
 
 .view_more_works:hover .view_more-button {
+  transition-property: transform;
   transform: scale(1.2);
-  transition: all 1s ease-out;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0.1s;
+  opacity: 1.0;
 }
 
 
@@ -361,13 +369,22 @@ about-home_datyou {
 
 .view_more-button {
   width: 170px;
-  transition: all 0.3s;
+  transition-property: transform;
+
+  transition-duration: 0.1s;
+  transition-delay: 0.1s;
+  transition-timing-function: ease;
 }
 
 
 .view_more_about:hover .view_more-about-btn {
+  transition-property: transform;
   transform: scale(1.2);
-  transition: all 1s ease-out;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0.1s;
+  opacity: 1.0;
+
 }
 
 
@@ -378,6 +395,7 @@ about-home_datyou {
   transition: all 0.3s;
   margin-left: auto;
   display: block;
+  opacity: 1.0;
 }
 
 
@@ -539,12 +557,22 @@ dd {
 .works_list_pc_button {
   width: 180px;
   margin-top: 160px;
+
+  transition-property: transform;
+
+  transition-duration: 0.1s;
+  transition-delay: 0.1s;
+  transition-timing-function: ease;
 }
 
 
 .works_list-btn:hover .works_list_pc_button {
+  transition-property: transform;
   transform: scale(1.2);
-  transition: all 1s ease-out;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0.1s;
+  opacity: 1.0;
 }
 
 
@@ -1009,11 +1037,22 @@ input[type="email"] {
   color: #725039;
   background-color: #f4ede1;
   border-radius: 10px;
+
+  transition-property: background-color, color;
+  transition-duration: 0.1s;
+  transition-timing-function: ease;
+  transition-delay: 0.1s;
 }
 
 .thanks-btn:hover {
   background-color: #75553f;
   color: #f4ede1;
+
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0.1s;
+
 }
 
 
